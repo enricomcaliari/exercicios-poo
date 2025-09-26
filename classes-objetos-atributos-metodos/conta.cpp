@@ -24,28 +24,22 @@ int main()
     stpcpy(c.id, "123456789");
     c.saldo = 0;
 
-
     char menu;
-    int valor;
+    int numTransacoes, valor;
 
-    printf("Conta %s\n", c.id);
-    for (int i = 0; i > -1; i++)
+    scanf("%d", &numTransacoes);
+
+    for (int i = 0; i < numTransacoes; i++)
     {
-        printf("\nEscolha uma opcao abaixo:\n");
-        printf("Deposito - D\n");
-        printf("Saque - S\n");
-        printf("Encerrar programa - E\n");
-
         scanf(" %c", &menu);
 
-        if (menu == 'D' || menu == 'd')
+        if (menu == 'D')
         {
-            printf("\nDigite o valor: ");
             scanf("%d", &valor);
 
-            if (valor < 0)
+            if (valor <= 0)
             {
-                printf("\nO valor deve ser positivo\n");
+                printf("VALOR INVALIDO\n");
             }
             else
             {
@@ -53,18 +47,17 @@ int main()
             }
         }
 
-        else if (menu == 'S' || menu == 's')
+        else if (menu == 'S')
         {
-            printf("\nDigite o valor: ");
             scanf("%d", &valor);
 
-            if (valor < 0)
+            if (valor <= 0)
             {
-                printf("\nO valor deve ser positivo\n");
+                printf("VALOR INVALIDO\n");
             }
             else if (valor > c.saldo)
             {
-                printf("\nSaldo insuficiente\n");
+                printf("SALDO INSUFICIENTE\n");
             }
             else
             {
@@ -72,12 +65,7 @@ int main()
             }
         }
 
-        else
-        {
-            break;
-        }
-
-        printf("\nSaldo: R$ %.2f\n", c.saldo);
+        printf("%.0f\n", c.saldo);
     }
 
     return 0;

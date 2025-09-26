@@ -20,13 +20,9 @@ int main()
 {
     Retangulo r;
 
-    printf("Digite a largura em cm: ");
-    scanf("%f", &r.largura);
-    printf("Digite a altura em cm: ");
-    scanf("%f", &r.altura);
+    scanf("%f %f", &r.largura, &r.altura);
 
-    printf("Area: %.2f cm quadrados\n", r.area());
-    printf("Perimetro: %.2f cm\n", r.perimetro());
+    printf("%.0f %.0f\n", r.area(), r.perimetro());
 
     return 0;
 }
